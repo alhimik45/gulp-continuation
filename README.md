@@ -10,6 +10,8 @@ Install package with NPM and add it to your development dependencies:
 
 ## Usage
 
+For using with browserify there is [continuatify](https://github.com/alhimik45/continuatify) transformer.
+
 ```javascript
 var gulp = require('gulp');
 var continuation = require('gulp-continuation');

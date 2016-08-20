@@ -1,0 +1,37 @@
+{
+  "name": "gulp-continuation",
+  "description": "Gulp plugin for continuation.js: A compiler for JavaScript asynchronous Continuation-Passing Style transformation",
+  "version": "1.0.0",
+  "author": "Alexey Kolpakov <alhimik45@gmail.com>",
+  "bugs": "https://github.com/alhimik45/gulp-continuation/issues",
+  "dependencies": {
+    "continuation": "^0.1.7",
+    "gulp-util": "^3.0.7",
+    "through2": "^2.0.1"
+  },
+  "devDependencies": {
+    "event-stream": "^3.3.4",
+    "mocha": "^3.0.2",
+    "vinyl": "^1.2.0"
+  },
+  "homepage": "https://github.com/alhimik45/gulp-continuation/",
+  "keywords": [
+    "gulpplugin",
+    "continuation",
+    "asynchronous",
+    "async",
+    "transformation",
+    "monad",
+    "coffeescript",
+    "livescript",
+    "typescript",
+    "cps",
+    "compile"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": "https://github.com/alhimik45/gulp-continuation.git",
+  "scripts": {
+    "test": "mocha"
+  }
+}

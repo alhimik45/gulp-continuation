@@ -28,5 +28,5 @@ You can pass all options available for [continuation.js](https://github.com/BYVo
 
 ## Errors
 
-`gulp-continuation` emits an 'error' event if there is unparseable code in the passed file. `message` property of 'error' constains description.
+`gulp-continuation` emits an 'error' event if there is unparseable code in the passed file. `message` property of 'error' contains description.
 

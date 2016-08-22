@@ -11,6 +11,7 @@ Install package with NPM and add it to your development dependencies:
 ## Usage
 
 For using with browserify there is [continuatify](https://github.com/alhimik45/continuatify) transformer.
+It supports [gulp-sourcemaps](https://github.com/floridoo/gulp-sourcemaps), so use it if you want source maps.
 
 ```javascript
 var gulp = require('gulp');

@@ -72,4 +72,32 @@ describe('gulp-continuation', function () {
         });
         myContinuation.write(fakeFile);
     });
+
+    it('should emit same source map as plain continuation', function (done) {
+        // create the fake file
+        var fakeFile = new File({
+            contents: new Buffer(code),
+            sourceMap: {
+                file: 'test.js',
+                mappings: '',
+                names: [],
+                sources: ['test1.js'],
+                sourcesContent: [code],
+                version: 3
+            }
+        });
+
+        var plainCompiled = continuation.compile(code, {sourceMap: true});
+        var plainSourceMap = JSON.parse(continuation.getSourceMap('test.js', ['test.js']));
+
+        // Create a continuation plugin stream
+        var myContinuation = gulpContinuation();
+        myContinuation.write(fakeFile);
+        myContinuation.once('data', function (file) {
+            assert(file.isBuffer());
+            assert.equal(file.contents.toString('utf8'), plainCompiled);
+            assert.deepEqual(file.sourceMap, plainSourceMap);
+            done();
+        });
+    });
 });

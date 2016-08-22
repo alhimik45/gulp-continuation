@@ -1,7 +1,7 @@
 {
   "name": "gulp-continuation",
   "description": "Gulp plugin for continuation.js: A compiler for JavaScript asynchronous Continuation-Passing Style transformation",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Alexey Kolpakov <alhimik45@gmail.com>",
   "bugs": "https://github.com/alhimik45/gulp-continuation/issues",
   "dependencies": {

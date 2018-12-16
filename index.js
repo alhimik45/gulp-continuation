@@ -36,7 +36,7 @@ function gulpContinuation(options) {
                 this.emit('error', new PluginError(PLUGIN_NAME, e.message));
                 return cb();
             }
-            file.contents = new Buffer(compiled);
+            file.contents = Buffer.from(compiled);
         }
         cb(null, file);
     });

@@ -2,7 +2,7 @@
 
 var assert = require('assert');
 var File = require('vinyl');
-var es = require('event-stream');
+var stream = require('stream');
 var gulpContinuation = require('./index');
 var continuation = require('continuation');
 
@@ -33,7 +33,7 @@ describe('gulp-continuation', function () {
     it('should emit same code as plain continuation', function (done) {
         // create the fake file
         var fakeFile = new File({
-            contents: new Buffer(code)
+            contents: Buffer.from(code)
         });
         // Create a continuation plugin stream
         var myContinuation = gulpContinuation();
@@ -48,7 +48,7 @@ describe('gulp-continuation', function () {
     it('should emit error if stream passed', function (done) {
         // create the fake file
         var fakeFile = new File({
-            contents: es.readArray(code.split(' '))
+            contents: new stream.PassThrough()
         });
         // Create a continuation plugin stream
         var myContinuation = gulpContinuation();
@@ -62,7 +62,7 @@ describe('gulp-continuation', function () {
     it('should emit error if malformed code passed', function (done) {
         // create the fake file
         var fakeFile = new File({
-            contents: new Buffer(malformedCode)
+            contents: Buffer.from(malformedCode)
         });
         // Create a continuation plugin stream
         var myContinuation = gulpContinuation();
@@ -76,7 +76,7 @@ describe('gulp-continuation', function () {
     it('should emit same source map as plain continuation', function (done) {
         // create the fake file
         var fakeFile = new File({
-            contents: new Buffer(code),
+            contents: Buffer.from(code),
             sourceMap: {
                 file: 'test.js',
                 mappings: '',
